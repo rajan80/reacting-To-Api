@@ -29,7 +29,7 @@ const App = () => {
       .then((allpeople) => setpeople(allpeople));
   }, []);
 
-  if (loadfilms == false) {
+  if (loadfilms == false && loadpeople ==false){
     return (
         
       <main className="container">
@@ -69,14 +69,14 @@ const App = () => {
     return (
       <main className="container">
         <section className="row justify-center mt-5">
-          <button onClick={() => handleButtonClick()}> Load People</button>
+          <button onClick={() => handleButtonClick()}> People</button>
         </section>
       </main>
     );
   } else if (loadpeople == true) {
     return (
       <main className="container">
-        <button onClick={() => handleButtonClick()}> Load People</button>
+        <button onClick={() => handleButtonClick()}> People</button>
 
         <section className="row justify-center mt-5">
           {people.map((people) => (
