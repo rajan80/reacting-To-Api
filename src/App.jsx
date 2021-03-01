@@ -9,11 +9,9 @@ const App = () => {
     setloadpeople(true);
   };
 
-  
-
   const [films, setfilms] = useState([]);
   const [loadfilms, setloadfilms] = useState(false);
-    
+
   const [people, setpeople] = useState([]);
   const [loadpeople, setloadpeople] = useState(false);
 
@@ -29,26 +27,30 @@ const App = () => {
       .then((allpeople) => setpeople(allpeople));
   }, []);
 
-  if (loadfilms == false && loadpeople ==false){
+  if (loadfilms == false && loadpeople == false) {
     return (
-        
-      <main className="container">
-        <section className="row justify-center mt-5">
-            
-            
-            
-          <button onClick={() => handleClick()}>Load Films</button>
-          <button onClick={() => handleButtonClick()}>People</button>
-        </section>
-      </main>
+        <main className="container">
+       
+          <h1 class="welcome">Welcome To Studio Ghibli</h1>
+
+          <button id ="load-btn"class="load-btn" onClick={() => handleClick()}>
+            Load Films
+          </button>
+          <button class="load-people" onClick={() => handleButtonClick()}>
+            People
+          </button>
+          </main>
+         
+    
+    
     );
   } else if (loadfilms == true) {
     return (
       <main className="container">
         <button onClick={() => handleClick()}>Load Films</button>
+       
 
         <section className="row justify-center mt-5">
-          
           {films.map((films) => (
             <div className="col-md-6" key={`user-card-${films.id}`}>
               <div className="card shadow my-2">
@@ -57,8 +59,9 @@ const App = () => {
 
                   <p className="card-subtitle text-muted">{films.title}</p>
                   <p className="card-rext">{films.description}</p>
-                  <a href={`https://ghibliapi.herokuapp.com/films/${films.id}`}>Link To Json</a>
-
+                  <a href={`https://ghibliapi.herokuapp.com/films/${films.id}`}>
+                    Link To Json
+                  </a>
                 </div>
               </div>
             </div>
@@ -90,8 +93,11 @@ const App = () => {
                   <p className="card-subtitle text-muted">{people.name}</p>
                   <p className="card-rext">{people.age}</p>
                   <p className="card-rext">{people.gender}</p>
-                  <a href={`https://ghibliapi.herokuapp.com/people/${people.id}`}>Link To Json</a>
-
+                  <a
+                    href={`https://ghibliapi.herokuapp.com/people/${people.id}`}
+                  >
+                    Link To Json
+                  </a>
                 </div>
               </div>
             </div>
