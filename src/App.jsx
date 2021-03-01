@@ -57,6 +57,8 @@ const App = () => {
 
                   <p className="card-subtitle text-muted">{films.title}</p>
                   <p className="card-rext">{films.description}</p>
+                  <a href={`https://ghibliapi.herokuapp.com/films/${films.id}`}>Link To Json</a>
+
                 </div>
               </div>
             </div>
@@ -88,6 +90,8 @@ const App = () => {
                   <p className="card-subtitle text-muted">{people.name}</p>
                   <p className="card-rext">{people.age}</p>
                   <p className="card-rext">{people.gender}</p>
+                  <a href={`https://ghibliapi.herokuapp.com/people/${people.id}`}>Link To Json</a>
+
                 </div>
               </div>
             </div>
